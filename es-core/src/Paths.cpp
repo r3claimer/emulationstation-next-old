@@ -63,6 +63,25 @@ Paths::Paths()
 	mKodiPath = "/usr/bin/kodi";
 #endif
 
+#if defined(ROCKNIX)
+	mRootPath = "/storage";
+	mEmulationStationPath = getExePath();
+	mUserEmulationStationPath = "/storage/.config/emulationstation";
+
+	mLogPath = "/var/log";
+	mScreenShotsPath = "/storage/roms/screenshots";
+	mSaveStatesPath = "/storage/roms/savestates";
+	mMusicPath = mUserEmulationStationPath + "/BGM";
+	mUserMusicPath = "/storage/roms/_userdata/BGM";
+	mThemesPath = mUserEmulationStationPath + "/themes";
+	mUserThemesPath = "/storage/roms/_userdata/themes";
+	mDecorationsPath = mUserEmulationStationPath + "/bezels";
+	mUserDecorationsPath = "/storage/roms/_userdata/bezels";
+	mTimeZonesPath = "/usr/share/zoneinfo";
+
+	mSystemConfFilePath = "/storage/.config/system/configs/system.cfg";
+#endif
+
 /* EmuElec sample locations.
 #ifdef _ENABLEEMUELEC
 	mRootPath = "/storage/roms"; // ?
